@@ -1,2 +1,2 @@
-# turtle-graphics-programms
+# lyceum-turtle-graphics-programms
 Interesting python turtle graphics programs 
