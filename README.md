@@ -1,2 +1,2 @@
 # turtle-graphics
-Interesting python turtle graphics programs 🐢
+Interesting python turtle graphics programs 
