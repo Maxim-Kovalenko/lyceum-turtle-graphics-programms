@@ -1,5 +1,5 @@
 from turtle import *
-import time
+from random import *
 
 # from random import *
 def move(x, y):
@@ -64,6 +64,13 @@ def starLine(side, minX, y, count, distBetw):
         x = minX + distBetw * counter
         star(side, "yellow", "yellow", x, y)
 
+def moon(radius, color, minX, minY, maxX, maxY):
+    x = randint(minX, maxX)
+    y = randint(minY, maxY)
+    move(x, y)
+    dot(radius, color)
+
+
 def frame(x1, y1, x2, y2, color):
     pensize(10)
     pencolor(color)
@@ -82,12 +89,12 @@ def frame(x1, y1, x2, y2, color):
     forward(30)
     write(line)'''
 
-bgcolor("cyan")
-speed(2)
+bgcolor("gray")
+speed(0)
+moon(200, "white", -925, 300, 900, 400)
+frame(-950, -490, 950, 500, "darkorange")
 pensize(3)
-
-'''
-starLine(40, -900, 500, 15, 120)
+starLine(40, -900, 450, 15, 120)
 starLine(40, -900, 380, 13, 150)
 starLine(40, -900, 300, 15, 120)
 treesLine(20, -900, 100, 23, 80)
@@ -95,5 +102,4 @@ treesLine(20, -700, -100, 18, 80)
 treesLine(20, -900, -300, 23, 80)
 #'''
 
-frame(-950, -590, 500, 575, "darkorange")
-# writeline("Merry Christmas!", "darkblue")
+writeline("Merry Christmas!", "darkblue")
