@@ -1,46 +1,65 @@
 from turtle import *
+from random import *
 
-def movedelta(x, y):
+def moveDelta(x, y):
     penup()
     goto(int(xcor()) + x, int(ycor()) + y)
     pendown()
 
-def movedeltaandpaint(x, y):
+def moveDeltaAndPaint(x, y):
     goto(int(xcor()) + x, int(ycor()) + y)
 
 def frame(height):
+    pensize(5)
+    pencolor("brown")
     x = height / 2
-    movedelta(x * 1.5, 0)
-    movedeltaandpaint(0, x)
-    movedeltaandpaint(x * -3, 0)
-    movedeltaandpaint(0, x * -2)
-    movedeltaandpaint(x * 3, 0)
-    movedeltaandpaint(0, x)
-    movedelta(-2 * x, -x)
+    moveDelta(x * 1.5, 0)
+    moveDeltaAndPaint(0, x)
+    moveDeltaAndPaint(x * -3, 0)
+    moveDeltaAndPaint(0, x * -2)
+    moveDeltaAndPaint(x * 3, 0)
+    moveDeltaAndPaint(0, x)
+    moveDelta(-2 * x, -x)
 
 def square(side):
-    movedeltaandpaint(side, 0)
-    movedeltaandpaint(0, side)
-    movedeltaandpaint(-side, 0)
-    movedeltaandpaint(0, -side)
+    pensize(1)
+    pencolor(choice(["green", "blue", "yellow"]))
+    fillcolor(choice(["green", "blue", "yellow"]))
+    begin_fill()
+    moveDeltaAndPaint(side, 0)
+    moveDeltaAndPaint(0, side)
+    moveDeltaAndPaint(-side, 0)
+    moveDeltaAndPaint(0, -side)
+    end_fill()
 
 def triangle(side):
+    pensize(3)
+    pencolor(choice(["green", "blue", "yellow"]))
+    fillcolor(choice(["green", "blue", "yellow"]))
+    begin_fill()
     forward(side)
     left(120)
     forward(side)
     left(120)
     forward(side)
     left(120)
+    end_fill()
 
-def house(size):
+def house(size, forwardHeight):
+    penup()
+    left(90)
+    forward(forwardHeight)
+    pendown()
+    right(90)
     square(size)
-    movedelta(0, size)
+    moveDelta(0, size)
     triangle(size)
+
 
 def picture(height):
     frame(height)
-    house(height / 2)
+    house(height / 4, height / 4)
 
-print("Please enter the height of your picture, preferably even")
-picture(int(input()))
+speed(5)
+picture(int(input("Введіть висоту вашого зображення: ")))
 
