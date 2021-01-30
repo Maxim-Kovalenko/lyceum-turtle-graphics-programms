@@ -3,20 +3,20 @@ from random import *
 
 a = 1
 
-def f(x,y):
+def drawLine(x,y):
     colors = ["green", "blue", "lime", "orange", "violet", "pink", "black", "yellow", "red"]
     pencolor(choice(colors))
     goto(x,y)
-def f1(x, y):
+def increasePenSize(x, y):
     global a
     a = a+1
     pensize(a)
 
-def f2(x, y):
+def increaseSpeed(x, y):
     global a
     a = a+1
     speed(a)
 
-onscreenclick(f, 1)
-onscreenclick(f1, 2)
-onscreenclick(f2, 3)
+onscreenclick(drawLine, 1)
+onscreenclick(increasePenSize, 2)
+onscreenclick(increaseSpeed, 3)
